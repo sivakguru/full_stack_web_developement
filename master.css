@@ -1,0 +1,19 @@
+h1{
+    font-family: 'Bebas Neue', cursive;
+    font-size: larger;
+}
+
+h2{
+    font-family: 'Montserrat', sans-serif;
+    font-size: large;
+}
+
+h3{
+    font-family: 'Open Sans', sans-serif;
+    font-size: small;
+}
+
+p{
+    font-family: 'Courier Prime', monospace;
+    font-size: medium;
+}
