@@ -1,0 +1,14 @@
+{% extends "basic.html" %}
+
+{% block content %}
+
+<div class="h-100 p-5 text-white bg-dark rounded-3">
+    <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold">Thank You..!</h1>
+        <p class="col-md-8 fs-4">Good to have you here {{first}} {{last}}</p>
+        <p class="col-md-8 fs-4">And {{checkbox}}</p>
+        <a class="btn btn-primary btn-lg" role="button" href="{{ url_for('index') }}">Go to Home</a>
+    </div>
+</div>
+
+{% endblock %}

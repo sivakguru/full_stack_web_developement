@@ -1,0 +1,40 @@
+{% extends "basic.html" %}
+
+{% block content %}
+
+<div class="b-example-divider"></div>
+<div class="container col-xl-10 col-xxl-8 px-4 py-5">
+    <div class="row align-items-center g-lg-5 py-5">
+      <div class="col-lg-7 text-center text-lg-start">
+        <h1 class="display-4 fw-bold lh-1 mb-3">Sea turtles</h1>
+        <p class="col-lg-10 fs-4">The turtle totem symbolizes our peaceful walk on this earth.
+            It represents the path we take as we embark on our journey through life.
+            In contrast to emotional or spiritual development occurring in bursts, 
+            the way of the turtle anchors our personal unfolding in a slow, 
+            more grounded series of steps and longer cycles of transformation.</p>
+      </div>
+      <div class="col-md-10 mx-auto col-lg-5">
+        <form class="p-4 p-md-5 border rounded-3 bg-light" action="{{ url_for('thanks') }}">
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" placeholder="First Name" name="first">
+            <label for="floatingInput">First Name</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" placeholder="Last Name" name="last">
+            <label for="floatingPassword">Last Name</label>
+          </div>
+          <div class="checkbox mb-3">
+            <label>
+              <input type="checkbox" value="remember" name="checkbox"> Remember me
+            </label>
+          </div>
+          <button class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
+          <hr class="my-4">
+          <small class="text-muted">By clicking Sign up, you agree to the terms of use.</small>
+        </form>
+      </div>
+    </div>
+</div>
+<div class="b-example-divider"></div>
+
+{% endblock %}

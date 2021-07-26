@@ -1,0 +1,30 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic HTML</title>
+</head>
+<body>
+    <h1>My Spirit Animal is TURTLE...!</h1>
+    <h2>First Name : {{variable_first[0]}}</h2>
+    <h2>Last Name : {{variable_first[1]}}</h2>
+    <img src="../static/turtle.jpeg" alt="">
+</body>
+</html>
+-->
+
+{% extends "base.html" %}
+
+{% block content %}
+<dev class="container">
+    <h1 class="fs-2">My Spirit Animal is TURTLE...!</h1>
+    <h2 class="fs-3">First Name : {{variable_first[0]}}</h2>
+    <h2 class="fs-3">Last Name : {{variable_first[1]}}</h2>
+    <figure class="figure">
+        <img src="../static/turtle.jpeg" class="img-fluid img-thumbnail rounded" alt="">
+        <figcaption class="figure-caption text-start">The Turtle Totem</figcaption>
+    </figure>
+</dev>
+{% endblock %}

@@ -1,0 +1,5 @@
+tableauconfig:
+  site_name: <site_name>
+  server_url: https://<server_url>/
+  token_name: <access_token>
+  api_token: <api_token_key>

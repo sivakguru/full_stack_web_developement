@@ -1,0 +1,13 @@
+{% extends "basic.html" %}
+
+{% block content %}
+
+<div class="h-100 p-5 text-white bg-dark rounded-3">
+    <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold">Welcome to Party Animals Fest..!</h1>
+        <p class="col-md-8 fs-4">Wanna Sign up ? Click below</p>
+        <a class="btn btn-primary btn-lg" role="button" href="{{ url_for('sign_up') }}">Sign Up</a>
+    </div>
+</div>
+
+{% endblock %}
