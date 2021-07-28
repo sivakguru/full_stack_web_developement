@@ -1,4 +1,5 @@
 from flask import Flask, app, render_template, request
+import re
 
 app = Flask(__name__)
 
@@ -14,16 +15,24 @@ def sign_up():
 def thanks():
     first = request.args.get('first')
     last = request.args.get('last')
+    uname = request.args.get('uname')
     checkbox = request.args.get('checkbox')
-    if checkbox == 'remember':
-        val='We will Remember you..!'
-    else:
-        val='We wont Save any cache..!'
-    return render_template('thanks.html', first=first, last=last, checkbox=val)
+    val = 'We will Remember you..!' if checkbox == 'remember' else 'We wont Save any cache..!'
+    # User name Validation
+    validation = {
+        '[0-9]$':'Must Have a Number at the END',
+        '[A-Z]':'Must have an Uppercase',
+        '[a-z]':'Must have a lowercase'
+    }
+    test_val = [validation[x] if not bool(re.search(x,uname)) else 'pass' for x in list(validation.keys())]
+    not_valid = [x for x in test_val if x!='pass']
+    check=len(not_valid)
+    return render_template('thanks.html', first=first, last=last,
+     checkbox=val, not_valid=not_valid, check=check)
 
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html'), 404
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)

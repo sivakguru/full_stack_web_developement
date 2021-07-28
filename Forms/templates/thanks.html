@@ -5,9 +5,20 @@
 <div class="h-100 p-5 text-white bg-dark rounded-3">
     <div class="container-fluid py-5">
         <h1 class="display-5 fw-bold">Thank You..!</h1>
-        <p class="col-md-8 fs-4">Good to have you here {{first}} {{last}}</p>
-        <p class="col-md-8 fs-4">And {{checkbox}}</p>
-        <a class="btn btn-primary btn-lg" role="button" href="{{ url_for('index') }}">Go to Home</a>
+        {% if check == 0 %}
+            <p class="col-md-8 fs-4">Good to have you here {{first}} {{last}}</p>
+            <p class="col-md-8 fs-4">And {{checkbox}}</p>
+            <a class="btn btn-primary btn-lg" role="button" href="{{ url_for('index') }}">Go to Home</a>
+        {% else %}
+            <p class="col-lg-10 fs-4">The User name provided does not pass the below conditions </p>
+            <ul class="col-lg-10 fs-4">
+                {% for i in not_valid %}
+                <li>{{i}}</li>
+                {% endfor %}
+            </ul>
+            <p class="col-md-8 fs-4"> Please Try with a Valid user name</p>
+            <a class="btn btn-primary btn-lg" role="button" href="{{ url_for('sign_up') }}">Sign Up</a>
+        {% endif %}
     </div>
 </div>
 
