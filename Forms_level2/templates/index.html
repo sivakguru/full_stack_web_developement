@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms Level1</title>
+</head>
+<body>
+
+    <p>
+        {% if breed %}
+
+        The Name you entered was {{breed}}
+        Updated in the form Below..
+
+        {% else %}
+
+        Please enter your Name:
+
+        {% endif %}
+    </p>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        {{ form.breed.label }} {{ form.breed() }}
+        {{ form.submit() }}
+    </form>
+
+</body>
+</html>
